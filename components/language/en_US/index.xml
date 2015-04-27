@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content>
+    <navigation>
+        <register>Register</register>
+        <login>Login</login>
+        <howto>How does it work?</howto>
+        <contact>Contact</contact>
+    </navigation>
+</content>
