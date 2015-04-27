@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="temp/temp.css">
+    </head>
+    
+    <body>
+        <div id="signinModal" class="modal hide fade" style="top: 10px; position: absolute; display: none;"
+        aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="hp-close" title="Fermer" data-dismiss="modal"
+                aria-hidden="true">Fermer</button>
+                <h3 class="fs-medium">Bienvenue ! Connectez-vous sur hopwork</h3>
+            </div>
+            <div class="modal-notice hide"></div>
+            <div class="modal-body">
+                <div class="modal-body-inner">
+                    <div class="signin row-fluid">
+                        <div class="span6">
+                            <form name="fb_signin" accept-charset="UTF-8" action="/signin/facebook"
+                            class="form-horizontal" method="POST">
+                                <input type="hidden" name="scope" value="email,user_photos">
+                                <button class="btn-social btn-facebook">facebook</button>
+                            </form>
+                        </div>
+                        <div class="span6">
+                            <form name="g_signin" action="/signin/google" method="POST">
+                                <button type="submit" class="btn-social btn-google">Google</button>
+                                <input type="hidden" name="scope" value="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="separator">
+                            <span>OU</span>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <form id="formSignin" class="form-block jsinit" data-jsobjpopin="[{'obj':'forms.signin', 'option' : {
+                                                                        'progressbtn' : true,
+                                                                        'signinRenewEmailMandatory' : 'Pour récupérer votre mot de passe, veuillez saisir une adresse email dans le champs \'Adresse email\'.',
+                                                                        'renewSendSuccess' : 'Email de récupération du mot de passe envoyé.',
+                                                                        'renewSendFailed' : 'Echec lors de l\'envoi du mail de récupération du mot de passe.'
+                                                                        }
+                                                                    }]">
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input required="required" type="email" class="input-block" id="j_username"
+                                        placeholder="Adresse e-mail" value="">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input required="required" type="password" class="input-block" id="signin_password"
+                                        placeholder="Mot de passe">
+                                    </div>
+                                </div>
+                                <div class="controls">
+                                    <a href="#" class="pwd-renewal pull-right">J'ai perdu mon mot de passe</a>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="control-group br-small">
+                                    <div class="controls legal">
+                                        <span>En entrant sur HopWork vous confirmez que vous acceptez les&nbsp;
+                                            <a href="/legal"
+                                            target="_blank">Conditions Générales</a>.</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="pagination-centered br-small">
+                                    <button class="btn btn-block progress-button" id="btnSignin" data-ajax=""
+                                    type="submit" data-style="fill" data-horizontal="">
+                                        <span class="content">Se connecter</span>
+                                        <span class="progress">
+                                            <span class="progress-inner"></span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <h4 class="no-mg fs-medium flex">Pas encore membre Hopwork ?&nbsp;
+                    <a id="switchToSignup" data-dismiss="modal"
+                    href="#signupModal" data-toggle="modal" title=""> Inscrivez-vous</a>
+                </h4>
+            </div>
+        </div>
+    </body>
+
+</html>
